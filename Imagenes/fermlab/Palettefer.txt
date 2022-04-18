@@ -1,0 +1,36 @@
+/* CSS HEX */
+--cupid: #fbc4cb;
+--snow-drift: #f3f6f0;
+--tacao: #eeb778;
+--manhattan: #f5bf9b;
+--cupid: #fbbcca;
+--almond: #f0d6cc;
+--apricot-peach: #fac1b1;
+--pink-flare: #e4c4cb;
+--pig-pink: #fcdce4;
+
+
+/* SCSS HEX */
+$cupid: #fbc4cb;
+$snow-drift: #f3f6f0;
+$tacao: #eeb778;
+$manhattan: #f5bf9b;
+$cupid: #fbbcca;
+$almond: #f0d6cc;
+$apricot-peach: #fac1b1;
+$pink-flare: #e4c4cb;
+$pig-pink: #fcdce4;
+
+
+/* SCSS RGB */
+--cupid: rgba(251,196,203,1);
+--snow-drift: rgba(243,246,240,1);
+--tacao: rgba(238,183,120,1);
+--manhattan: rgba(245,191,155,1);
+--cupid: rgba(251,188,202,1);
+--almond: rgba(240,214,204,1);
+--apricot-peach: rgba(250,193,177,1);
+--pink-flare: rgba(228,196,203,1);
+--pig-pink: rgba(252,220,228,1);
+
+
