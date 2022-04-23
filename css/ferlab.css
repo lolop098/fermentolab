@@ -326,6 +326,10 @@ li {
   border: 3px solid black;
   margin-left: 5px;
 }
+.carrusel img:hover{
+  height: 200px;
+  width: 200px;
+}
 @media screen and (max-width: 360px) {
   .carrusel img{
     width: 300px;
