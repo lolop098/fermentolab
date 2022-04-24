@@ -180,7 +180,7 @@ li {
   list-style: none;
 }
 
-.Barra li:hover>ul {
+.Barra li:hover >ul {
   display: block;
 }
 
