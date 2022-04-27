@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FermentoLab</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="shortcut icon" href="./Imagenes/fermlab/logo.jpg" />
   <link rel="stylesheet" href="./css/ferlab.css" />
   <script src="https://kit.fontawesome.com/a04b235fab.js" crossorigin="anonymous"></script>
@@ -17,21 +17,19 @@
     <div class="nombre">
       <p class="Titulo labTitulo">FermentoLab</p>
     </div>
-    <nav class="Barra colorBarraLab">
-      <ul class="primo">
-        <li class="recto"><a href="index.html">Inicio</a></li>
-        <li class="recto">
-          <a href="#local">Locales</a>
-          <ul>
-            <li class="menuAdentro">
-              <a href="./html/cuadra.html"> Cuadra</a>
-            </li>
-            <li class="menuAdentro"><a href="./html/anti.html"> Anti </a></li>
-            <li class="menuAdentro"><a href="./html/guey.html"> Guey</a></li>
-            <li class="menuAdentro"><a href="./html/sanjo.html"> Sanjo</a></li>
-          </ul>
+    <nav class="colorBarraLab">
+      <ul class="nav nav-pills justify-content-end">
+        <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+        <li class="nav-item dropdown">
+          <a href="#local" class="nav-link dropdown-toggle" id="navbardrop" data-bs-toggle="dropdown">Locales</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="./html/cuadra.html" > Cuadra</a>
+            <a class="dropdown-item" href="./html/anti.html"> Anti </a>
+            <a class="dropdown-item" href="./html/guey.html"> Guey</a>
+            <a class="dropdown-item" href="./html/sanjo.html"> Sanjo</a>
+          </div>
         </li>
-        <li class="recto"><a href="#contacto">Contacto</a></li>
+        <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
       </ul>
     </nav>
   </header>
@@ -50,52 +48,53 @@
         <p class="quote">Muy pronto se abre un Cuadra en palergiales</p>
       </div>
       <div class="divNosImg">
-        <img src="./Imagenes/fermlab/equipo.jpg" alt="logo" class="imagenPresentacion" />
+        <img src="./Imagenes/fermlab/equipo.jpg" alt="equipo" class="imagenPresentacion" />
       </div>
       </article>
     </section>
     <section class="estructura sectionImg">
-      <div class=" carrousel slide" data-ride="carousel">
+      <div id="demo" class="carousel slide" data-bs-ride="carousel">
         <h4 class="subtitulos">Galeria</h4>
-        <ul class="carousel-indicators" >
-          <li data-target="#demo" data-slide-to="0" class="active"></li>
-          <li data-target="#demo" data-slide-to="1"></li>
-          <li data-target="#demo" data-slide-to="2"></li>
-        </ul>
-        <div class="carousel-inner">
+        <div class="carousel-inner carrusel">
           <div class="carousel-item active">
-            <img src="./Imagenes/fermlab/guey.jpg" alt="Guey">
+            <img src="./Imagenes/fermlab/guey.jpg" alt="Guey" class="d-block w-100">
           </div>
           <div class="carousel-item">
-            <img src="./Imagenes/fermlab/fachada.jpg" alt="fachada">
+            <img src="./Imagenes/fermlab/fachada.jpg" alt="fachada" class="d-block w-100">
           </div>
           <div class="carousel-item">
-            <img src="./Imagenes/fermlab/comida.jpg" alt="Food">
+            <img src="./Imagenes/fermlab/comida.jpg" alt="Food" class="d-block w-100">
           </div>
           <div class="carousel-item">
-            <img src="./Imagenes/fermlab/mawi.jpg" alt="mawi">
+            <img src="./Imagenes/fermlab/mostrador.jpg" alt="mostrados" class="d-block w-100">
           </div>
+          <div class="carousel-indicators" >
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
         </div>
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
           <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
           <span class="carousel-control-next-icon"></span>
-        </a>
+        </button>
+      </div>
       </div>
     </section>
-    <section class="sectionLocales">
+    <section class="sectionLocales col-xl-12">
       <h4 class="subtitulos">Nuestros Locales</h4>
-      <article class="page-content">
+      <article class="estructura page-content">
         <div class="card">
-          <div class="content estructura">
+          <div class="content">
             <p class="copy">Panaderia ecléctica</p>
             <button class="btn">
               <a href="html/cuadra.html"> Ir a la página</a>
             </button>
           </div>
         </div>
-        <div class="card estructura">
+        <div class="card">
           <div class="content">
             <p class="copy">Pizzas de masa madre y más</p>
             <button class="btn">
@@ -136,9 +135,8 @@
       <li><i class="fa-brands fa-instagram"><a href="https://www.instagram.com/fermentolab/" target="_bank"> @fermentolab</a></i></li>
     </ul>
   </footer>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>  
 </body>
 
 </html>
