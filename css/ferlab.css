@@ -7,6 +7,7 @@
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 li {
@@ -38,9 +39,11 @@ li {
     "margen principal margenD"
     "margen pieDePagina margenD";
 }
-
-.colorLetra {
-  background-color: #f0d6cc;
+.cuerpo {
+  font-size: 1.1rem;
+}
+.colorRosaLetra {
+  font-size: medium;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -148,40 +151,9 @@ li {
   color: #e7d3e8;
   text-shadow: 2px 2px #523755;
 }
-
 /*NAV*/
-.Barra {
-  display: flex;
-  background-color: #eeb778;
-  width: 100%;
-  flex-direction: row-reverse;
-}
-
-.recto a {
-  color: #f2f2f2;
-  padding: 10px 15px;
-  display: block;
-  background-color: inherit;
-}
-
-.Barra ul {
-  display: block;
-  float: left;
-}
-
-.recto {
-  display: inline-block;
-}
-
-.Barra li ul {
-  display: none;
-  position: absolute;
-  min-width: 10px;
-  list-style: none;
-}
-
-.Barra li:hover > ul {
-  display: block;
+.nav-link {
+  color: white;
 }
 
 .colorBarraLab {
@@ -203,9 +175,9 @@ li {
 .colorBarraSanjo {
   background-color: #523755;
 }
-
-.menuAdentro a {
+.dropdown-item{
   background-color: #eeb778;
+  color: white;
 }
 
 /*MAIN*/
@@ -248,6 +220,7 @@ li {
   margin: auto;
   padding: 20px 20px 20px 0px;
   background-color: #f3f6f0;
+  width: 100%;
 }
 
 /*NOSOTROS*/
@@ -316,6 +289,7 @@ li {
 .sectionImg {
   grid-area: sectionImg;
 }
+<<<<<<< HEAD
 
 .carrusel {
   display: flex;
@@ -328,12 +302,21 @@ li {
   width: 190px;
   border: 3px solid black;
   margin-left: 5px;
+=======
+.carrusel{
+  height: 490px;
+  width: 790px;
+ align-content: center;
+ display: block;
+ text-align: center;
+ margin: auto;
+>>>>>>> mi-rama
 }
 
 .gallery img {
-  height: 190px;
-  width: 190px;
-  border: 3px solid black;
+  height: 300px;
+  width: 300px;
+  border: 3px solid gray;
   margin-left: 5px;
 }
 
@@ -360,17 +343,24 @@ li {
   grid-template-areas:
     "Video foto1 foto2"
     "Video foto3 foto4"
-    "Video fotoMayor fotoMayor";
+    "Video foto5 foto6";
 }
 
 .Video {
   grid-area: Video;
-  align-self: center;
-  padding: 10px 10px 10px 25px;
+  display: block;
+  text-align: center;
+  margin-top: 10%;
 }
 
-.fotoMayor {
-  grid-area: fotoMayor;
+@media screen and (max-width:700px) {
+  .Video {
+    display: none;
+  }
+}
+
+.foto6 {
+  grid-area: foto6;
 }
 
 .foto1 {
@@ -389,8 +379,18 @@ li {
   grid-area: foto4;
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 460px) {
   .gallery {
+=======
+
+.foto5 {
+  grid-area: foto5;
+}
+
+@media screen and (max-width:360px) {
+  .gallery{
+>>>>>>> mi-rama
     display: flex;
     flex-direction: column;
   }
@@ -446,6 +446,11 @@ li {
   grid-area: sectionMenu;
 }
 
+.menu {
+  display: block;
+  text-align: center;
+}
+
 .propuestaC {
   background-color: #f3f6f0;
   padding: 3px 5px 0px 5px;
@@ -480,9 +485,14 @@ li {
   justify-content: center;
 }
 
-.ubicacion iframe {
+.mapita {
   position: relative;
   margin: 20px;
+}
+
+.mapita:hover {
+  height: 400px;
+  width: 450px;
 }
 
 .ubicacion ul {
@@ -514,9 +524,9 @@ li {
   display: grid;
   grid-gap: 1rem;
   padding: 1rem;
-  max-width: 1024px;
   margin: 0 auto;
   background-color: #f2f2f2;
+  width: 100%;
 }
 
 @media (min-width: 600px) {
@@ -547,7 +557,7 @@ li {
 
 @media (min-width: 370px) {
   .card {
-    height: 300px;
+    height: 400px;
   }
 }
 
@@ -709,17 +719,25 @@ li {
   }
 }
 
-/* aca terminar el hover */
 /*CONTACTO*/
 .sectionContact {
   grid-area: sectionContact;
 }
 
-.contacto fieldset {
-  padding: 10px 10px 10px 10px;
-  margin: 10px;
-  text-align: center;
-  line-height: 30px;
+.cuestionario{
+  margin: 3em;
+}
+.botonEnviar {
+  padding: 1.3em 3em;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  outline: none;
 }
 
 .pieDePagina {
@@ -741,6 +759,7 @@ li {
   grid-area: margenD;
 }
 
+<<<<<<< HEAD
 .botonEnviar {
   padding: 1.3em 3em;
   font-size: 10px;
@@ -753,3 +772,5 @@ li {
   transition: all 0.3s ease 0s;
   outline: none;
 }
+=======
+>>>>>>> mi-rama
