@@ -289,20 +289,7 @@ li {
 .sectionImg {
   grid-area: sectionImg;
 }
-<<<<<<< HEAD
 
-.carrusel {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.carrusel img {
-  height: 190px;
-  width: 190px;
-  border: 3px solid black;
-  margin-left: 5px;
-=======
 .carrusel{
   height: 490px;
   width: 790px;
@@ -310,7 +297,6 @@ li {
  display: block;
  text-align: center;
  margin: auto;
->>>>>>> mi-rama
 }
 
 .gallery img {
@@ -379,20 +365,14 @@ li {
   grid-area: foto4;
 }
 
-<<<<<<< HEAD
-@media screen and (max-width: 460px) {
-  .gallery {
-=======
-
 .foto5 {
   grid-area: foto5;
 }
 
 @media screen and (max-width:360px) {
-  .gallery{
->>>>>>> mi-rama
+  .gallery {
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
   }
 
   .gallery img {
@@ -759,7 +739,6 @@ li {
   grid-area: margenD;
 }
 
-<<<<<<< HEAD
 .botonEnviar {
   padding: 1.3em 3em;
   font-size: 10px;
@@ -772,5 +751,3 @@ li {
   transition: all 0.3s ease 0s;
   outline: none;
 }
-=======
->>>>>>> mi-rama
