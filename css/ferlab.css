@@ -39,9 +39,11 @@ li {
     "margen principal margenD"
     "margen pieDePagina margenD";
 }
+
 .cuerpo {
   font-size: 1.1rem;
 }
+
 .colorRosaLetra {
   font-size: medium;
   font-family: Arial, Helvetica, sans-serif;
@@ -151,6 +153,7 @@ li {
   color: #e7d3e8;
   text-shadow: 2px 2px #523755;
 }
+
 /*NAV*/
 .nav-link {
   color: white;
@@ -175,7 +178,8 @@ li {
 .colorBarraSanjo {
   background-color: #523755;
 }
-.dropdown-item{
+
+.dropdown-item {
   background-color: #eeb778;
   color: white;
 }
@@ -209,7 +213,7 @@ li {
   grid-area: contenedor;
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 480px) {
   .contenedor {
     grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
   }
@@ -266,7 +270,7 @@ li {
   padding: 10px;
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 480px) {
   .nosotros {
     display: flex;
     flex-direction: column;
@@ -281,7 +285,7 @@ li {
   }
 
   .quote {
-    padding: 15px
+    padding: 15px;
   }
 }
 
@@ -290,13 +294,17 @@ li {
   grid-area: sectionImg;
 }
 
-.carrusel{
+.carrusel {
   height: 490px;
   width: 790px;
- align-content: center;
- display: block;
- text-align: center;
- margin: auto;
+  align-content: center;
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+.carousel-item img {
+  vertical-align: bottom;
 }
 
 .gallery img {
@@ -304,14 +312,34 @@ li {
   width: 300px;
   border: 3px solid gray;
   margin-left: 5px;
+  transition: all 2s;
 }
 
-.carrusel img:hover {
-  height: 200px;
-  width: 200px;
+.gallery img:hover {
+  height: 350px;
+  width: 350px;
 }
 
-@media screen and (max-width: 460px) {
+.imagenesAgrupadas {
+  position: relative;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.textoImagen {
+  position: absolute;
+  color: #000;
+  background-color: white;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 480px) {
   .carrusel img {
     width: 300px;
     margin-left: 50px;
@@ -339,7 +367,7 @@ li {
   margin-top: 10%;
 }
 
-@media screen and (max-width:700px) {
+@media screen and (max-width: 700px) {
   .Video {
     display: none;
   }
@@ -369,15 +397,15 @@ li {
   grid-area: foto5;
 }
 
-@media screen and (max-width:360px) {
+@media screen and (max-width: 360px) {
   .gallery {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
   }
 
   .gallery img {
     width: 300px;
-    margin-left: 50px
+    margin-left: 50px;
   }
 
   .sectionImg {
@@ -442,7 +470,7 @@ li {
   display: none;
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 480px) {
   .menuPdf {
     display: none;
   }
@@ -468,6 +496,7 @@ li {
 .mapita {
   position: relative;
   margin: 20px;
+  transition: all 2s;
 }
 
 .mapita:hover {
@@ -484,7 +513,7 @@ li {
   list-style: none;
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 480px) {
   .ubicacion {
     flex-direction: column-reverse;
   }
@@ -507,6 +536,10 @@ li {
   margin: 0 auto;
   background-color: #f2f2f2;
   width: 100%;
+}
+
+.aNegra {
+  color: #000;
 }
 
 @media (min-width: 600px) {
@@ -704,9 +737,10 @@ li {
   grid-area: sectionContact;
 }
 
-.cuestionario{
+.cuestionario {
   margin: 3em;
 }
+
 .botonEnviar {
   padding: 1.3em 3em;
   font-size: 10px;
