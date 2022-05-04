@@ -43,33 +43,34 @@ li {
 .cuerpo {
     font-size: 1.1rem;
 }
-    .colorRosaLetra {
-        font-size: medium;
-        font-family: Arial, Helvetica, sans-serif;
-    }
 
-    .colorLetra {
-        background-color: #cccccc;
-        font-family: "Courier New", Courier, monospace;
-    }
+.colorRosaLetra {
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-    .colorCelesteLetra {
-        background-color: #b1cadc;
-        font-family: Arial, Helvetica, sans-serif;
-    }
+.colorLetra {
+    background-color: #cccccc;
+    font-family: "Courier New", Courier, monospace;
+}
 
-    .colorVerdeLetra {
-        background-color: #e4f0d4;
-        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-            "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    }
+.colorCelesteLetra {
+    background-color: #b1cadc;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-    .colorVioletaLetra {
-        background-color: #bba7c1;
-        font-family: 'Amatic SC', cursive; 
-        font-weight: bold;
-        font-size: larger;
-    }
+.colorVerdeLetra {
+    background-color: #e4f0d4;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.colorVioletaLetra {
+    background-color: #bba7c1;
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    font-size: larger;
+}
 
 
 /*HEADER*/
@@ -531,7 +532,6 @@ li {
 .sectionLocales {
     grid-area: sectionLocales;
 
-
     .page-content {
         display: grid;
         grid-gap: 1rem;
@@ -539,11 +539,62 @@ li {
         margin: 0 auto;
         background-color: #f2f2f2;
         width: 100%;
+
+        .card {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
+            color: white;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
+                0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
+                0 16px 16px rgba(0, 0, 0, 0.1);
+        
+                .content {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                    padding: 1rem;
+                    transition: transform var(--d) var(--e);
+                    z-index: 1;
+                    background-color: transparent;
+                }
+            
+                .content>*+* {
+                    margin-top: 1rem;
+                }
+            
+                .copy {
+                    font-family: var(--font-serif);
+                    font-size: 1.125rem;
+                    font-style: italic;
+                    line-height: 1.35;
+                }
+            
+                .btn {
+                    cursor: pointer;
+                    margin-top: 1.5rem;
+                    padding: 0.75rem 1.5rem;
+                    font-size: 0.65rem;
+                    font-weight: bold;
+                    letter-spacing: 0.025rem;
+                    text-transform: uppercase;
+                    color: white;
+                    background-color: #f3f6f0;
+                    border: none;
+            
+                    .aNegra {
+                        color: #000;
+                    }
+                }   
+             }
     }
 
-    .aNegra {
-        color: #000;
-    }
 
     @media (min-width: 600px) {
         .page-content {
@@ -555,20 +606,6 @@ li {
         .page-content {
             grid-template-columns: repeat(4, 1fr);
         }
-    }
-
-    .card {
-        position: relative;
-        display: flex;
-        align-items: flex-end;
-        overflow: hidden;
-        padding: 1rem;
-        width: 100%;
-        text-align: center;
-        color: white;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
-            0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
-            0 16px 16px rgba(0, 0, 0, 0.1);
     }
 
     @media (min-width: 370px) {
@@ -639,52 +676,7 @@ li {
         background-image: url(../Imagenes/sanjo/logo.jpg);
         background-position: center;
     }
-
-    .content {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        padding: 1rem;
-        transition: transform var(--d) var(--e);
-        z-index: 1;
-        background-color: transparent;
-    }
-
-    .content>*+* {
-        margin-top: 1rem;
-    }
-
-    .copy {
-        font-family: var(--font-serif);
-        font-size: 1.125rem;
-        font-style: italic;
-        line-height: 1.35;
-    }
-
-    .btn {
-        cursor: pointer;
-        margin-top: 1.5rem;
-        padding: 0.75rem 1.5rem;
-        font-size: 0.65rem;
-        font-weight: bold;
-        letter-spacing: 0.025rem;
-        text-transform: uppercase;
-        color: white;
-        background-color: #f3f6f0;
-        border: none;
-    }
-
-    .btn:hover {
-        background-color: hsl(352, 87%, 88%);
-    }
-
-    .btn:focus {
-        outline: 1px dashed pink;
-        outline-offset: 3px;
-    }
-
+    
     @media (hover: hover) and (min-width: 600px) {
         .card:after {
             transform: translateY(0);
