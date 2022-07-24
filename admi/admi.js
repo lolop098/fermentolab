@@ -28,4 +28,4 @@ if (precio > costo) {
 
 const alfa = new producto (1004, "alfajor de maicena", "pasteleria", 320, 67)
 console.log(alfa)
-//la idea es ir completando la tabla
+//la idea es ir completando la tabla con la info que se brinda cuando la gente aprete el "Agregar producto"
