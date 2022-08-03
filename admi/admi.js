@@ -18,14 +18,32 @@ if(id == ''){
     id = id + 1
 }
 
-if (precio > costo) {
-  const chipa = new producto(id, nombre, categoria, precio, costo);
-  console.log(chipa)
-} else {
-  console.log("No hay rentabilidad");
+validarRentabilidad = (precio, costo) => {
+  if (precio > costo) {
+    const chipa = new producto(id, nombre, categoria, precio, costo);
+    console.log(chipa)
+  } else {
+    console.log("No hay rentabilidad");
+  }
 }
+validarRentabilidad(precio, costo)
+
+const chipa = new producto(id, nombre, categoria, precio, costo);
+
+const Productos = ["medialuna", "Pan de campo"]
+const Precio = [120, 20, 54]
 
 
-const alfa = new producto (1004, "alfajor de maicena", "pasteleria", 320, 67)
-console.log(alfa)
+Productos.push(chipa)
+console.log(Productos)
+
+
+
+
+
 //la idea es ir completando la tabla con la info que se brinda cuando la gente aprete el "Agregar producto"
+
+
+
+
+
