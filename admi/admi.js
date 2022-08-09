@@ -51,7 +51,7 @@ class product {
     this.precio = precio;
     this.costo = costo;
   }
-   validarRentabilidad = (precio, costo) => {
+   validarRentabilidad = () => {
     if (precio > costo) {
       let rentabilidad = 100*((1-(costo/precio)))
       console.log(`La rentabilidad es de ${rentabilidad.toFixed(2)}%`)
@@ -61,18 +61,25 @@ class product {
   }
 }
 
-id = 102  
+let id = 102  
 
-const Items = ["Medialunas", "Pan de campo"]
+const aumentarId = () => {
+  id = id + 1
+}
 
-const chipa = new product (id+1, prompt("ingrese nombre del producto"),prompt("Ingrese categoria"), precio = parseFloat(prompt("Ingrese precio")), costo = parseFloat(prompt("Ingrese costo")))
+const Items = [
+  new product (101, "Medialuna", "Pasteleria", 200, 45),
+  new product (102, "Pan de campo", "Panaderia", 500, 47)
+]
 
+aumentarId()
+const chipa = new product (id, prompt("ingrese nombre del producto"),prompt("Ingrese categoria"), precio = parseFloat(prompt("Ingrese precio")), costo = parseFloat(prompt("Ingrese costo")))
 Items.push(chipa)
-chipa.validarRentabilidad(precio, costo)
+chipa.validarRentabilidad()
 
-const budin = new product (id+2, prompt("ingrese nombre del producto"),prompt("Ingrese categoria"), precio = parseFloat(prompt("Ingrese precio")), costo = parseFloat(prompt("Ingrese costo")))
-
+aumentarId()
+const budin = new product (id, prompt("ingrese nombre del producto"),prompt("Ingrese categoria"), precio = parseFloat(prompt("Ingrese precio")), costo = parseFloat(prompt("Ingrese costo")))
 Items.push(budin)
-budin.validarRentabilidad(precio, costo)
+budin.validarRentabilidad()
 
 console.table(Items)
