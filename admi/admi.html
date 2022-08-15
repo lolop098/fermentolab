@@ -17,11 +17,40 @@
             <h1>Lista de articulos</h1>
         </div>
         <div class="comandos">
-            <button type="button" class="btn btn-secondary">Agregar producto</button>
+            <button id="myBtn" type="button" class="btn btn-secondary">Agregar producto</button>
+        </div>
+        <div id="modal" class=" agregar">
+            <div class="modelContent">
+            <form action="#" class="nuevoProducto">
+                <fieldset class="mb-3 mt-3 container p-5 my-5 m -10 border fondoGris">
+                    <h3>Nuevo item</h3>
+                    <span class="close">&times;</span>
+                    <label form="name" class="form-label">Nombre del producto</label>
+                    <input id="nombre" type="text" class="form-control" placeholder="" required />
+                    <br />
+                    <label form="category" class="form-label">Categoria</label>
+                    <input id="categoria" type="text" class="form-control" placeholder="Escriba la categoria que pertenece" />
+                    <br />
+                    <label form="precio" class="form-label">Precio del producto</label>
+                    <input id="precio" type="number" class="form-control" placeholder="$" />
+                    <br />
+                    <label form="Costo" class="form-label">Costo del producto</label>
+                    <input id="costo" type="number" class="form-control" placeholder="$" />
+                    <br />
+                    <input id="cargar" type="submit" class="botonEnviar" />
+                </fieldset>
+              </div>  
         </div>
         <section class="Tabla">
             <div>
                 <table class="table table-bordered" id="listaProductos">
+                    <tr>
+                        <th>ID</th>
+                        <th>Articulo</th>
+                        <th>Categoria</th>
+                        <th>Precio</th>
+                        <th>Costo</th>
+                    </tr>
                     <tr>
                         <th>ID</th>
                         <th>Articulo</th>
