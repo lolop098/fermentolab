@@ -1,8 +1,8 @@
 //la idea es ir completando la tabla con la info que se brinda cuando la gente aprete el "Agregar producto"
 
 class product {
-  constructor(id, nombre, categoria, precio, costo) {
-    this.id = id;
+  constructor(numero, nombre, categoria, precio, costo) {
+    this.numero = numero;
     this.nombre = nombre;
     this.categoria = categoria;
     this.precio = precio;
@@ -18,22 +18,30 @@ class product {
   };
 }
 
-let id = 102;
+let numero = 0;
 
 const aumentarId = () => {
-  id = id + 1;
-  return id
-};
+  items.forEach(i => {
+    if (numero > i.numero){
+      numero = i.numero
+    }   
+  })
+  return ++numero
+}
 
-const items = [
-  new product(101, "Medialuna", "Pasteleria", 200, 45),
-  new product(102, "Pan de campo", "Panaderia", 500, 47),
-];
+let items = [];
+
+if(localStorage.getItem('items')){
+  items = JSON.parse(localStorage.getItem('items')) //JSON.parse() pasa de JSON a objeto
+}else {
+  localStorage.setItem('items', JSON.stringify(items)) //JSON.stringify pasa de objeto a JSON
+}
 
 let modal = document.getElementById("modal");
-let btn = document.getElementById("myBtn");
+let btn = document.getElementById("agregarProduct");
 let span = document.getElementsByClassName("close")[0];
 let cargar = document.getElementById("cargar")
+
 
 btn.onclick = function () {
   modal.style.display = "block";
@@ -49,63 +57,29 @@ window.onclick = function (event) {
   }
 }
 
-
-/*aumentarId();
-const chipa = new product(
-  id,
-  prompt("ingrese nombre del producto"),
-  prompt("Ingrese categoria"),
-  (precio = parseFloat(prompt("Ingrese precio"))),
-  (costo = parseFloat(prompt("Ingrese costo")))
-);
-items.push(chipa);
-chipa.validarRentabilidad();
-
-aumentarId();
-const budin = new product(
-  id,
-  prompt("ingrese nombre del producto"),
-  prompt("Ingrese categoria"),
-  (precio = parseFloat(prompt("Ingrese precio"))),
-  (costo = parseFloat(prompt("Ingrese costo")))
-);
-items.push(budin);
-budin.validarRentabilidad();*/
-
-console.table(items);
-
 const cargarTabla = () => {
   const listaProductos = document.getElementById("listaProductos");
   listaProductos.innerHTML = `<tr>
-<th>ID</th>
-<th>Articulo</th>
-<th>Categoria</th>
-<th>Precio</th>
-<th>Costo</th>
-</tr>`
+    <th>ID</th>
+    <th>Articulo</th>
+    <th>Categoria</th>
+    <th>Precio</th>
+    <th>Costo</th>
+    <th> <th>
+    </tr>`
+  localStorage.getItem("items", JSON.stringify(items))
   items.forEach((producto) => {
     listaProductos.innerHTML += `
-      <th>${producto.id}</th>
+    <tr id= "lineaNueva">
+      <th>${producto.numero}</th>
       <th>${producto.nombre}</th>
       <th>${producto.categoria}</th>
       <th>${producto.precio}</th>
       <th>${producto.costo}</th>
-  `;
-  });
+      <th><button class="eliminar" value="${producto.numero}" onclick="eliminarMetodo(${producto.numero})">X</button><th>
+      <tr>`
+    });
 }
-
-/*const cargarProducto = (newProducto) => {
-  const listaProductos = document.getElementById("listaProductos");
-    listaProductos.innerHTML += `
-    
-        <th>${newProducto.id}</th>
-        <th>${newProducto.nombre}</th>
-        <th>${newProducto.categoria}</th>
-        <th>${newProducto.precio}</th>
-        <th>${newProducto.costo}</th>
-    `;
-  };*/
-
 
 cargar.onclick = function () {
   const nombre = document.getElementById("nombre").value
@@ -114,9 +88,25 @@ cargar.onclick = function () {
   const costo = document.getElementById("costo").value
   const newProduct = new product(aumentarId(), nombre, categoria, precio, costo)
   items.push(newProduct)
-  console.log(items)
   cargarTabla()
-  /*cargarProducto(newProduct)*/
+  localStorage.setItem("items", JSON.stringify(items))
 }
 
 cargarTabla()
+
+function eliminarMetodo (numero){
+ items.forEach(element => {
+  if (element.numero == numero){
+    console.log(element)
+    let index = items.indexOf(element);
+    items.splice(index, 1);
+    console.log(index)
+    localStorage.setItem('items', JSON.stringify(items));
+  } 
+ });
+ cargarTabla()
+}
+
+
+
+

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="admi.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+        <link rel="shortcut icon" href="#">
 </head>
 
 <body>
@@ -17,11 +18,11 @@
             <h1>Lista de articulos</h1>
         </div>
         <div class="comandos">
-            <button id="myBtn" type="button" class="btn btn-secondary">Agregar producto</button>
+            <button id="agregarProduct" type="button" class="btn btn-secondary">Agregar producto</button>
         </div>
         <div id="modal" class=" agregar">
             <div class="modelContent">
-            <form action="#" class="nuevoProducto">
+            <form action="#" id="formulario" class="nuevoProducto">
                 <fieldset class="mb-3 mt-3 container p-5 my-5 m -10 border fondoGris">
                     <h3>Nuevo item</h3>
                     <span class="close">&times;</span>
@@ -37,7 +38,7 @@
                     <label form="Costo" class="form-label">Costo del producto</label>
                     <input id="costo" type="number" class="form-control" placeholder="$" />
                     <br />
-                    <input id="cargar" type="submit" class="botonEnviar" />
+                    <input id="cargar" type="submit" class="botonEnviar"/>
                 </fieldset>
               </div>  
         </div>
@@ -50,13 +51,7 @@
                         <th>Categoria</th>
                         <th>Precio</th>
                         <th>Costo</th>
-                    </tr>
-                    <tr>
-                        <th>ID</th>
-                        <th>Articulo</th>
-                        <th>Categoria</th>
-                        <th>Precio</th>
-                        <th>Costo</th>
+                        <th></th>
                     </tr>
                 </table>
             </div>
