@@ -30,12 +30,14 @@ const aumentarId = () => {
 }
 
 let items = [];
-
+/*
 if(localStorage.getItem('items')){
   items = JSON.parse(localStorage.getItem('items')) //JSON.parse() pasa de JSON a objeto
 }else {
   localStorage.setItem('items', JSON.stringify(items)) //JSON.stringify pasa de objeto a JSON
-}
+}*/ //OPTIMIZADO
+
+localStorage.getItem("items") ? items = JSON.parse(localStorage.getItem('items')) : localStorage.setItem('items', JSON.stringify(items))
 
 let modal = document.getElementById("modal");
 let btn = document.getElementById("agregarProduct");
