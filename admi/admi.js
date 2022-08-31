@@ -90,6 +90,13 @@ cargar.onclick = function () {
   const costo = document.getElementById("costo").value
   const newProduct = new product(aumentarId(), nombre, categoria, precio, costo)
   items.push(newProduct)
+
+  Toastify ({
+    text: "Producto agregado con exito",
+    duration: 3000,
+    backgroundColor: "green"
+  }) .showToast();
+
   cargarTabla()
   localStorage.setItem("items", JSON.stringify(items))
 }
@@ -107,6 +114,12 @@ function eliminarMetodo (numero){
   } 
  });
  cargarTabla()
+ Toastify ({
+  text: "Producto eliminado",
+  duration: 3000,
+  gravity: "bottom",
+  backgroundColor: "red"
+ }). showToast();
 }
 
 
