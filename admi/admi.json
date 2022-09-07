@@ -1,0 +1,23 @@
+[
+    {
+        "numero": "1",
+        "nombre": "Medialuna",
+        "categoria": "Pasteleria", 
+        "precio": "400",
+        "costo": "45"
+    },
+    {
+        "numero": "2",
+        "nombre": "Pan de Campo",
+        "categoria": "Panaderia", 
+        "precio": "600",
+        "costo": "75"
+    },
+    {
+        "numero": "3",
+        "nombre": "Carrot Cake",
+        "categoria": "Tortas", 
+        "precio": "650",
+        "costo": "110"
+    }
+]

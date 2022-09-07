@@ -18,7 +18,7 @@ class product {
   };
 }
 
-let numero = 0;
+let numero = 3;
 
 const aumentarId = () => {
   items.forEach(i => {
@@ -58,9 +58,8 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 }
-
+const listaProductos = document.getElementById("listaProductos");
 const cargarTabla = () => {
-  const listaProductos = document.getElementById("listaProductos");
   listaProductos.innerHTML = `<tr>
     <th>ID</th>
     <th>Articulo</th>
@@ -82,6 +81,23 @@ const cargarTabla = () => {
       <tr>`
     });
 }
+
+fetch('./admi.json')
+.then(Response => Response.json())
+.then(productojson => { console.table(productojson)
+  productojson.forEach((productojson) => { 
+    listaProductos.innerHTML += `<tr>
+    <tr id= "lineaNueva">
+    <th>${productojson.numero}</th>
+    <th>${productojson.nombre}</th>
+    <th>${productojson.categoria}</th>
+    <th>${productojson.precio}</th>
+    <th>${productojson.costo}</th>
+    <th><button class="eliminar" value="${productojson.numero}" onclick="eliminarMetodo(${productojson.numero})">X</button><th>
+    <tr>`
+    localStorage.getItem("items", JSON.stringify(items))
+  })
+})
 
 cargar.onclick = function () {
   const nombre = document.getElementById("nombre").value
@@ -121,7 +137,6 @@ function eliminarMetodo (numero){
   backgroundColor: "red"
  }). showToast();
 }
-
 
 
 
