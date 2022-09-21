@@ -1,5 +1,3 @@
-//la idea es ir completando la tabla con la info que se brinda cuando la gente aprete el "Agregar producto"
-
 class product {
   constructor(numero, nombre, categoria, precio, costo) {
     this.numero = numero;
@@ -18,7 +16,7 @@ class product {
   };
 }
 
-let numero = 3;
+let numero = 3; // 3 porque ya arranca el fetch con 3
 
 const aumentarId = () => {
   items.forEach(i => {
@@ -30,12 +28,6 @@ const aumentarId = () => {
 }
 
 let items = [];
-/*
-if(localStorage.getItem('items')){
-  items = JSON.parse(localStorage.getItem('items')) //JSON.parse() pasa de JSON a objeto
-}else {
-  localStorage.setItem('items', JSON.stringify(items)) //JSON.stringify pasa de objeto a JSON
-}*/ //OPTIMIZADO
 
 localStorage.getItem("items") ? items = JSON.parse(localStorage.getItem('items')) : localStorage.setItem('items', JSON.stringify(items))
 
@@ -82,22 +74,12 @@ const cargarTabla = () => {
     });
 }
 
-fetch('./admi.json')
+fetch('./admi.json') 
 .then(Response => Response.json())
 .then(productojson => { console.table(productojson)
-  productojson.forEach((productojson) => { 
-    listaProductos.innerHTML += `<tr>
-    <tr id= "lineaNueva">
-    <th>${productojson.numero}</th>
-    <th>${productojson.nombre}</th>
-    <th>${productojson.categoria}</th>
-    <th>${productojson.precio}</th>
-    <th>${productojson.costo}</th>
-    <th><button class="eliminar" value="${productojson.numero}" onclick="eliminarMetodo(${productojson.numero})">X</button><th>
-    <tr>`
-    localStorage.getItem("items", JSON.stringify(items))
+    localStorage.setItem("items", JSON.stringify(productojson));
+    cargarTabla();
   })
-})
 
 cargar.onclick = function () {
   const nombre = document.getElementById("nombre").value
